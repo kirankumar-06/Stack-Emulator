@@ -1,0 +1,11 @@
+.col-md-4{
+    background-color: whitesmoke;
+    margin-top: 50px;
+    justify-content: center;
+}
+.rounded {
+    border-radius:10px
+}
+.headStack{
+    text-align: center;
+}

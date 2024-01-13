@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stack Emulator</title>
+  <style>
+    #stack-display {
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stack Emulator</h1>
+  <label for="value">Enter value:</label>
+  <input type="text" id="value">
+  <button onclick="pushToStack()">Push</button>
+  <button onclick="popFromStack()">Pop</button>
+
+  <div id="stack-display">Stack: []</div>
+
+  <script>
+    // Initialize an empty stack
+    let stack = [];
+
+    // Function to update the stack display
+    function updateStackDisplay() {
+      document.getElementById('stack-display').innerText = 'Stack: [' + stack.join(', ') + ']';
+    }
+
+    // Function to add a value to the stack
+    function pushToStack() {
+      const value = document.getElementById('value').value.trim();
+
+      // Validate for empty value
+      if (value !== '') {
+        stack.push(value);
+        updateStackDisplay();
+      } else {
+        alert('Please enter a value before pushing to the stack.');
+      }
+
+      // Clear the input field
+      document.getElementById('value').value = '';
+    }
+
+    // Function to remove the last element from the stack
+    function popFromStack() {
+      if (stack.length > 0) {
+        stack.pop();
+        updateStackDisplay();
+      } else {
+        alert('The stack is already empty.');
+      }
+    }
+  </script>
+</body>
+</html>
